@@ -4,9 +4,11 @@ import * as THREE from 'three';
 import CLOUDS from 'vanta/dist/vanta.clouds.min';
 import './LoginPage.css';
 import { login } from '../services/api'
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
     const vantaRef = useRef(null);
+    const navigate = useNavigate();
   useEffect(() => {
     let vantaEffect = CLOUDS({
       el: vantaRef.current,
@@ -38,6 +40,7 @@ const LoginPage = () => {
       } catch (error) {
           console.error('Error logging in', error);
       }
+      navigate('/profile');
   };
 
 
