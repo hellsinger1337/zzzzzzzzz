@@ -1,15 +1,16 @@
-/* Общий фон и центрирование контейнера */
 .user-profile-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #333;
-}
-
-/* Стили для контейнера профиля */
-.profile-container,
-.edit-profile-container {
+  }
+  
+  .profile-container,
+  .edit-profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #444;
     color: #fff;
     padding: 50px; /* Увеличенный padding */
@@ -17,115 +18,183 @@
     width: 100%;
     max-width: 1000px; /* Увеличенный max-width */
     margin: 50px;
-}
-
-.profile-avatar,
-.edit-avatar-img {
+  }
+  
+  .profile-avatar,
+  .edit-avatar-img {
     width: 250px; /* Увеличенный размер аватара */
     height: 250px;
     border-radius: 50%;
     margin-bottom: 50px;
-}
-
-.profile-info,
-.edit-info {
+  }
+  
+  .profile-info,
+  .edit-info {
     width: 100%;
-}
-
-.profile-info p,
-.edit-info p {
+  }
+  
+  .profile-info p,
+  .edit-info p {
     margin: 12.5px 0; /* Увеличенные отступы */
     font-size: 35px; /* Увеличенный размер шрифта */
-}
-
-/* Стили для рычажка с текстом */
-.toggle-switch {
-    position: relative;
-    display: inline-block;
-    width: 350px; /* Увеличенная ширина рычажка */
-    height: 85px; /* Увеличенная высота */
-    margin: 25px;
-    border-radius: 42.5px;
-    background-color: #ccc;
-    transition: background-color 0.4s;
-}
-
-.toggle-switch input {
-    display: none;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: transparent;
-    transition: 0.4s;
-}
-
-.slider-text {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    line-height: 85px; /* Увеличенная высота строки */
-    color: black;
-    font-size: 35px; /* Увеличенный размер шрифта */
-    user-select: none;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 65px; /* Увеличенный размер овальчика */
-    width: 65px;
-    left: 10px;
-    bottom: 10px;
-    background-color: white;
-    transition: 0.4s;
+  }
+  
+  .profile-button {
+    color: #fff; /* Белый цвет текста */
+    border: none; /* Убираем рамку */
+    border-radius: 25px; /* Закругленные углы */
+    padding: 15px 30px; /* Внутренние отступы */
+    font-size: 20px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    cursor: pointer; /* Курсор указателя */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавный переход для фона и трансформации */
+    margin-top: 20px; /* Отступ сверху */
+  }
+  
+  .profile-button-green {
+    background-color: #2ecc71; /* Зеленый цвет */
+  }
+  
+  .profile-button-green:hover {
+    background-color: #27ae60; /* Цвет фона при наведении */
+    transform: translateY(-2px); /* Легкое поднятие кнопки при наведении */
+  }
+  
+  .profile-button-green:active {
+    background-color: #1e8449; /* Цвет фона при нажатии */
+    transform: translateY(0); /* Возвращение кнопки в исходное положение при нажатии */
+  }
+  
+  .profile-button-green:focus {
+    outline: none; /* Убираем стандартную обводку */
+    box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.5); /* Тень при фокусе для улучшения доступности */
+  }
+  
+  .profile-button-red {
+    background-color: #e74c3c; /* Красный цвет */
+  }
+  
+  .profile-button-red:hover {
+    background-color: #c0392b; /* Цвет фона при наведении */
+    transform: translateY(-2px); /* Легкое поднятие кнопки при наведении */
+  }
+  
+  .profile-button-red:active {
+    background-color: #a93226; /* Цвет фона при нажатии */
+    transform: translateY(0); /* Возвращение кнопки в исходное положение при нажатии */
+  }
+  
+  .profile-button-red:focus {
+    outline: none; /* Убираем стандартную обводку */
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.5); /* Тень при фокусе для улучшения доступности */
+  }  
+  
+  .profile,.profile-info,.edit-profile,.edit-avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .edit-avatar {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .edit-avatar-img {
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-}
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid #fff;
+  }
+  
+  .edit-avatar input[type="file"] {
+    display: none;
+  }
+  
+  .edit-avatar label {
+    background-color: #2eccc4;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .edit-avatar label:hover {
+    background-color: #6d27ae;
+  }
+  
+  .edit-avatar label:active {
+    background-color: #341e84;
+  }
+  
+  .edit-avatar label:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.5);
+  }
+  .edit-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+  }
+  
+  .edit-info p {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .edit-info input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+    background-color: #fff;
+    color: #333;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .edit-info input[type="text"]:focus {
+    border-color: #2ecc71;
+    box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.25);
+    outline: none;
+  }
 
-input:checked + .slider:before {
-    transform: translateX(265px); /* Скорректированное смещение */
-    background-color: #bbb;
-}
 
-/* Адаптивность для мобильных устройств */
-@media (max-width: 480px) {
+  /* Адаптивность для мобильных устройств */
+  @media (max-width: 480px) {
     .profile-container,
     .edit-profile-container {
-        width: 90%;
-        margin: 25px;
-        padding: 25px; /* Адаптивный padding */
-    }
 
+      width: 90%;
+      margin: 25px;
+      padding: 25px; /* Адаптивный padding */
+    }
+  
     .profile-avatar,
     .edit-avatar-img {
-        width: 200px; /* Адаптивный размер аватара */
-        height: 200px;
-        margin-bottom: 25px;
+      width: 200px; /* Адаптивный размер аватара */
+      height: 200px;
+      margin-bottom: 25px;
     }
-
+  
     .profile-info p,
     .edit-info p {
-        font-size: 28px; /* Адаптивный размер шрифта */
+      font-size: 28px; /* Адаптивный размер шрифта */
     }
-
-    .toggle-switch {
-        width: 280px; /* Адаптивная ширина рычажка */
-        height: 68px; /* Адаптивная высота */
-    }
-
-    .slider-text {
-        line-height: 68px; /* Адаптивная высота строки */
-        font-size: 28px; /* Адаптивный размер шрифта */
-    }
-
-    .slider:before {
-        height: 52px; /* Адаптивный размер овальчика */
-        width: 52px;
-        transform: translateX(212px); /* Адаптивное смещение */
-    }
-}
+  }

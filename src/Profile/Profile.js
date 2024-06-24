@@ -11,7 +11,7 @@ const Profile = ({ user }) => {
       <div className="profile-info">
         <p>Email: {user.email}</p>
         <p>Username: {user.username}</p>
-        <button className="profile-button" onClick={handleLogout}>LogOut</button>
+        <button className="profile-button profile-button-red" onClick={handleLogout}>LogOut</button>
       </div>
     </div>
   );

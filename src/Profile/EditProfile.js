@@ -55,9 +55,11 @@ const EditProfile = ({ user, onUpdate }) => {
         <input
           type="file"
           name="avatar"
+          id="avatar"
           onChange={handleAvatarChange}
           accept="image/*"
         />
+        <label htmlFor="avatar">Change Avatar</label>
       </div>
       <div className="edit-info">
         <p>Email: {user.email}</p>
@@ -68,8 +70,8 @@ const EditProfile = ({ user, onUpdate }) => {
           onChange={handleChange}
           placeholder="Username"
         />
-        <button type="submit" className="edit-button">Update</button>
       </div>
+      <button type="submit" className="profile-button profile-button-green">Update</button>
     </form>
   );
 };
