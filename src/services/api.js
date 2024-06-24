@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://127.0.0.1:8000'
+    baseURL: 'https://hellsinger1337-yarsu-wiki-0893.twc1.net'
 });
 
 export const register = (username, email, password) =>

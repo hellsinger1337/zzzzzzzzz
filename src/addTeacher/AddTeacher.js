@@ -17,7 +17,7 @@ const AddTeacher = ({ token }) => {
         e.preventDefault();
         try {
             const response = await axios.post(
-                'http://127.0.0.1:8000/api/teachers',
+                'https://hellsinger1337-yarsu-wiki-0893.twc1.net/api/teachers',
                 {
                     name,
                     photo,
