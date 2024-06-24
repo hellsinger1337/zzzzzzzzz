@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import './AddTeacher.css'
 const AddTeacher = ({ token }) => {
     const [name, setName] = useState('');
     const [photo, setPhoto] = useState('');
