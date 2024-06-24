@@ -116,6 +116,7 @@ const RegisterPage = () => {
         >
           Login
         </button>
+        <a href="/login">login</a>
       </form>
     </div>
   );

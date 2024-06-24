@@ -45,7 +45,7 @@ const LoginPage = () => {
     <div className="login-container" ref={vantaRef}>
         
       <form className="login-form" onSubmit={handleSubmit}>
-        <h2 className="login-title">НУ ПРИВЕТ, АНОН</h2>
+        <h2 className="login-title">Логинка</h2>
         <div className="input-container">
           <input
                 type="text"
