@@ -12,6 +12,7 @@ import LoginPage from './login/LoginPage';
 import RegisterPage from './login/RegisterPage'; 
 import AddTeacher from './addTeacher/AddTeacher.js'
 import Header from './Header';
+import CommitsComponent from './commit/CommitComponent.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 

@@ -15,54 +15,100 @@
     margin-bottom: 20px;
   }
   
-  .authors-container {
+  .authorsBlock {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    padding: 20px;
     gap: 20px;
   }
   
-  .author-card {
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    width: calc(33.333% - 20px);
-    max-width: 340px;
-    min-width: 280px;
+  .authorCard {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
     text-align: center;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
   }
   
-  .author-card img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1;
+  .authorCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .authorPicture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
     object-fit: cover;
+    margin-bottom: 15px;
   }
   
-  .author-card h3 {
+  .authorName {
+    font-size: 1.5em;
+    margin: 10px 0;
     color: #333;
-    padding: 10px;
   }
   
-  .author-card p {
+  .authorDescription {
+    font-size: 1em;
+    margin: 10px 0;
     color: #666;
-    padding: 0 10px 20px;
   }
   
-  .author-card a {
+  .authorTelegramLink {
     display: inline-block;
-    margin: 20px auto;
+    margin: 10px 0;
     padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
+    background-color: #2eaccc;
+    color: #fff;
     text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
   }
   
-  .author-card a:hover {
-    background-color: #0056b3;
+  .authorTelegramLink:hover {
+    background-color: #5627ae;
   }
   
+  .telegramIcon {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg') no-repeat center center;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+
+  .authorSpecialization {
+    font-size: 1em;
+    margin: 10px 0;
+    color: #666;
+  }
+  
+  /* Адаптивность для мобильных устройств */
+  @media (max-width: 480px) {
+    .authorCard {
+      max-width: 100%;
+      padding: 15px;
+    }
+  
+    .authorPicture {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .authorName {
+      font-size: 1.2em;
+    }
+  
+    .authorDescription, .authorSpecialization {
+      font-size: 0.9em;
+    }
+  }
   @media (max-width: 768px) {
     .authors-container {
       flex-direction: column;

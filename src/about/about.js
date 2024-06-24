@@ -1,16 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './about.css'
-
+import CommitsComponent from '../commit/CommitComponent';
 const AboutProject = () => {
   const [authors, setAuthors] = useState([]);
 
   useEffect(() => {
-    // Функция для получения данных об авторах с бэкенда
     const fetchAuthors = async () => {
       try {
-        const response = await axios.get('URL_К_ВАШЕМУ_API'); // Замените URL_К_ВАШЕМУ_API на фактический адрес API
-        setAuthors(response.data);
+        const authorsData = [
+          {
+            Id: 1,
+            Name: "Крылов Савелий",
+            PictureUrl: "https://sun9-72.userapi.com/impg/z2svf8FdvuDKfqTK12clO8lJhzRwlsW8tdDr_Q/_gRelGRw7No.jpg?size=2560x1707&quality=95&sign=b0ff0e6e6b50330bc6d8a7f290362608&type=album",
+            Description: "Милый мальчик титанчик в доте",
+            TelegramLink: "https://t.me/hellsinger1337",
+            TypeAuthor: 1
+          }
+        ];
+        setAuthors(authorsData);
       } catch (error) {
         console.error('Ошибка при получении данных об авторах:', error);
       }
@@ -29,17 +37,18 @@ const AboutProject = () => {
         и сделать обоснованный выбор. Мы стремимся сделать процесс обучения более комфортным и продуктивным для каждого студента.
       </p>
       <h2>Наши авторы</h2>
-      <div>
+      <div className='authorsBlock'>
         {authors.map(author => (
-          <div key={author.Id}>
-            <img src={author.PictureUrl} alt={author.Name} style={{ width: '100px', height: '100px' }} />
-            <h3>{author.Name}</h3>
-            <p>{author.Description}</p>
-            <a href={author.TelegramLink}>Связаться в Telegram</a>
-            <p>Специализация: {author.TypeAuthor === 0 ? 'Бэкэндер' : 'Фронтэндер'}</p>
+          <div key={author.Id} className='authorCard'>
+            <img src={author.PictureUrl} alt={author.Name} className='authorPicture' />
+            <h3 className='authorName'>{author.Name}</h3>
+            <p className='authorDescription'>{author.Description}</p>
+            <a href={author.TelegramLink} className='authorTelegramLink'><i className='telegramIcon'></i> Связаться в Telegram</a>
+            <p className='authorSpecialization'>Специализация: {author.TypeAuthor === 0 ? 'Бэкэндер' : 'Фронтэндер'}</p>
           </div>
         ))}
       </div>
+      <CommitsComponent />
     </div>
   );
 };

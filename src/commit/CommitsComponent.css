@@ -1,0 +1,85 @@
+.commits-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .buttons-container {
+    margin-bottom: 20px;
+  }
+  
+  .buttons-container button {
+    background-color: #2ecc71;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .buttons-container button:hover {
+    background-color: #27ae60;
+  }
+  
+  .buttons-container button.active {
+    background-color: #1e8449;
+  }
+  
+  .commits-list {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .commits-list h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .commits-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .commits-list li {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .commits-list li h2 {
+    font-size: 1.5em;
+    margin: 0 0 10px 0;
+  }
+  
+  .commits-list li p {
+    margin: 5px 0;
+  }
+  
+  /* Адаптивность для мобильных устройств */
+  @media (max-width: 480px) {
+    .buttons-container button {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  
+    .commits-list h1 {
+      font-size: 1.5em;
+    }
+  
+    .commits-list li h2 {
+      font-size: 1.2em;
+    }
+  
+    .commits-list li p {
+      font-size: 14px;
+    }
+  }
