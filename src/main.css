@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .main-page {
+    text-align: center;
+    padding: 20px;
+    background-color: #1f809e;
+  }
+  
+  .main-header {
+    background: url('https://source.unsplash.com/1600x900/?nature,water') no-repeat center center/cover;
+    color: white;
+    padding: 100px 20px;
+  }
+  
+  .main-header h1 {
+    font-size: 3em;
+    margin: 0;
+  }
+  
+  .main-header p {
+    font-size: 1.5em;
+    margin: 20px 0;
+  }
+  
+  .main-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: #2ecc71;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .main-button:hover {
+    background-color: #27ae60;
+  }
+  
+  .features {
+    padding: 50px 20px;
+  }
+  
+  .features h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .feature {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+  
+  .cta {
+    background-color: #2ecc71;
+    color: white;
+    padding: 50px 20px;
+  }
+  
+  .cta h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .main-footer {
+    padding: 20px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .main-footer p {
+    margin: 0;
+  }
+  
+  /* Адаптивность для мобильных устройств */
+  @media (max-width: 768px) {
+    .main-header {
+      padding: 50px 20px;
+    }
+  
+    .features-grid {
+      flex-direction: column;
+    }
+  
+    .feature {
+      width: 100%;
+    }
+  }  

@@ -6,13 +6,12 @@ import TeacherPage from './TeacherPage/TeacherPage.js';
 import UserProfile from './Profile/UserProfile';
 import YSUMap from './MapComponent/MapComponent.js';
 import AboutProject from './about/about.js';
-import RainbowText from './main.js'
+import MainPage from './main.js'
 import reportWebVitals from './reportWebVitals';
 import LoginPage from './login/LoginPage'; 
 import RegisterPage from './login/RegisterPage'; 
 import AddTeacher from './addTeacher/AddTeacher.js'
 import Header from './Header';
-import Chat from './chat/Chat.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -22,7 +21,7 @@ root.render(
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<RainbowText />}/>
+        <Route path="/" element={<MainPage />}/>
         <Route path="/addTeacher" element={<AddTeacher/>} />
         <Route path="/teachers" element={<TeachersList />} />
         <Route path="/teachers/:id" element={<TeacherPage />} />
