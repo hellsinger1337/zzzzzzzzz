@@ -4,6 +4,8 @@ import './Teachers.css'
 import {getTeachers} from '../services/api'
 const TeachersList = () => {
   const [teachers, setTeachers] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredTeachers, setFilteredTeachers] = useState([]);
 
   useEffect(() => {
     const fetchTeachers = async () => {
@@ -22,11 +24,33 @@ const TeachersList = () => {
     fetchTeachers();
   }, []);
 
+  useEffect(() => {
+    const filterTeachers = () => {
+      const lowercasedQuery = searchQuery.toLowerCase();
+      const filtered = teachers.filter(teacher =>
+        teacher.name.toLowerCase().includes(lowercasedQuery) ||
+        Object.values(teacher).some(value =>
+          String(value).toLowerCase().includes(lowercasedQuery)
+        )
+      );
+      setFilteredTeachers(filtered);
+    };
+
+    filterTeachers();
+  }, [searchQuery, teachers]);
+
   return (
     <div>
       <h1>Список преподавателей</h1>
+      <input
+        type="text"
+        placeholder="Поиск преподавателей..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        className="search-input"
+      />
       <ul>
-        {teachers.map(teacher => (
+        {filteredTeachers.map(teacher => (
           <li key={teacher.id}>
             <Link to={`/teachers/${teacher.id}`}>{teacher.name}</Link>
           </li>
