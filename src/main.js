@@ -13,18 +13,19 @@ const MainPage = () => {
       <section className="features">
         <h2>Что тут есть?</h2>
         <div className="features-grid">
-          <div className="feature">
+          <a href="/buildings" className="feature">
             <h3>Карта корпусов</h3>
             <p>Расположение всех корпусов на сайте ярославля</p>
-          </div>
-          <div className="feature">
+          </a>
+          <a href="/teachers" className="feature">
             <h3>Информация о преподователях</h3>
             <p>Развивающаяся база данных о преподователях с оценками пользователей</p>
-          </div>
-          <div className="feature">
+          </a>
+
+          <a href="/departments" className="feature">
             <h3>Информация о кафедрах</h3>
             <p>Когда-нибудь мы справимся и соберем инфу о кафедрах</p>
-          </div>
+          </a>
         </div>
       </section>
       <section className="cta">

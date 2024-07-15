@@ -11,7 +11,7 @@ const TeachersList = () => {
     const fetchTeachers = async () => {
       try {
         const response = await getTeachers();
-        if (!response.status==200) {
+        if (!response.status===200) {
           throw new Error('Network response was not ok');
         }
         const data = await response.data;
@@ -40,8 +40,9 @@ const TeachersList = () => {
   }, [searchQuery, teachers]);
 
   return (
-    <div>
+    <div className='container'>
       <h1>Список преподавателей</h1>
+      <Link to='/addTeacher' className="main-button">Добавить преподавателя</Link>
       <input
         type="text"
         placeholder="Поиск преподавателей..."
