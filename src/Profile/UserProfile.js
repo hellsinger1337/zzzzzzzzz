@@ -21,7 +21,6 @@ const UserProfile = () => {
       }
 
       const data = await response.data;
-      console.log(data);
       setUser(data);
     } catch (error) {
       console.error('Fetch error:', error);
@@ -41,6 +40,15 @@ const UserProfile = () => {
 
   if (!user) {
     return <div>Loading...</div>;
+  }
+  if(!user.is_email_verified){
+    return (
+      <div className="bad-email">
+        <h1>Добро пожаловать в клуб!</h1>
+        <h2>Для просмотра профиля или для кучи других действий тебе необходимо подтвердить почту</h2>
+        <p>Чтоб подтвердить почту просто кликни на ссылку, которая придет тебе на почту университета (Проверь спам, если не видно письма)</p>
+      </div>
+    )
   }
   return (
     <div className="user-profile-container">

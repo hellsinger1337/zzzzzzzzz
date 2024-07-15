@@ -40,7 +40,7 @@ const TeachersList = () => {
   }, [searchQuery, teachers]);
 
   return (
-    <div className='container'>
+    <div className='teachers-container'>
       <h1>Список преподавателей</h1>
       <Link to='/addTeacher' className="main-button">Добавить преподавателя</Link>
       <input

@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
   }
-  .container{
+  .teachers-container{
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -48,9 +48,6 @@ body {
   
   li a:hover {
     text-decoration: underline;
-  }
-  .main-button{
-    color: aquamarine;
   }
   /* Адаптивность для мобильных устройств */
   @media (max-width: 480px) {

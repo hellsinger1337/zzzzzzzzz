@@ -84,7 +84,10 @@
     background-color: #a93226; /* Цвет фона при нажатии */
     transform: translateY(0); /* Возвращение кнопки в исходное положение при нажатии */
   }
-  
+  .bad-email{
+    padding-left: 10%;
+    padding-right: 10%;
+  }
   .profile-button-red:focus {
     outline: none; /* Убираем стандартную обводку */
     box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.5); /* Тень при фокусе для улучшения доступности */
