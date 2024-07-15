@@ -1,4 +1,3 @@
-// LoginPage.js
 import React, { useState, useRef, useEffect } from 'react';
 import * as THREE from 'three';
 import CLOUDS from 'vanta/dist/vanta.clouds.min';
@@ -55,7 +54,7 @@ const RegisterPage = () => {
   
     try {
       const response = await register(username,email,password);
-      if (!response.status==200) {
+      if (!response.status===200) {
         const errorDetails = await response.text();
         throw new Error(`Network response was not ok: ${response.status} - ${errorDetails}`);
       }
@@ -114,9 +113,9 @@ const RegisterPage = () => {
           className="login-button"
           disabled={!email || !password || emailError}
         >
-          Login
+          Register
         </button>
-        <a href="/login">login</a>
+        <a className="another" href="/login">login</a>
       </form>
     </div>
   );

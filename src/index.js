@@ -12,9 +12,9 @@ import LoginPage from './login/LoginPage';
 import RegisterPage from './login/RegisterPage'; 
 import AddTeacher from './addTeacher/AddTeacher.js'
 import Header from './Header';
-import CommitsComponent from './commit/CommitComponent.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AdminPanel from './admin/AdminPanel.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -27,6 +27,7 @@ root.render(
         <Route path="/teachers" element={<TeachersList />} />
         <Route path="/teachers/:id" element={<TeacherPage />} />
         <Route path="/buildings" element={<YSUMap />} />
+        <Route path="/admin" element={<AdminPanel />} />
         <Route path="/departments" element={<div>Страница кафедр</div>} />
         <Route path="/about" element={<AboutProject />} />
         <Route path="/profile" element={<UserProfile />} />

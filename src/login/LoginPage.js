@@ -1,4 +1,3 @@
-// LoginPage.js
 import React, { useState, useRef, useEffect } from 'react';
 import * as THREE from 'three';
 import CLOUDS from 'vanta/dist/vanta.clouds.min';
@@ -74,7 +73,7 @@ const LoginPage = () => {
         >
           Login
         </button>
-        <a href="/register">register</a>
+        <a className='another' href="/register">register</a>
       </form>
     </div>
   );

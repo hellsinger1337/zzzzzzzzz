@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const api = axios.create({
+export const api = axios.create({
     baseURL: 'https://hellsinger1337-yarsu-wiki-0893.twc1.net'
 });
 
@@ -51,23 +51,23 @@ export const getMe = (token) =>
         }
     });
 
-    export const updateProfile = async (token, newUsername, newPhoto) => {
-        try {
-            const response = await api.put(
-                '/auth/profile',
-                {
-                    new_username: newUsername,
-                    new_photo: newPhoto
-                },
-                {
-                    headers: {
-                        Authorization: `Bearer ${token}`
-                    }
+export const updateProfile = async (token, newUsername, newPhoto) => {
+    try {
+        const response = await api.put(
+            '/auth/profile',
+            {
+                new_username: newUsername,
+                new_photo: newPhoto
+            },
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`
                 }
-            );
-            return response.data;
-        } catch (error) {
-            console.error('Failed to update profile:', error);
-            throw error;
-        }
-    };
+            }
+        );
+        return response.data;
+    } catch (error) {
+        console.error('Failed to update profile:', error);
+        throw error;
+    }
+};

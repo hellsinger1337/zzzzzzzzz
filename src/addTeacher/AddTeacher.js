@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import './AddTeacher.css'
+import {api, getMe} from '../services/api'
+
 const AddTeacher = ({ token }) => {
     const [name, setName] = useState('');
     const [photo, setPhoto] = useState('');
@@ -8,16 +9,18 @@ const AddTeacher = ({ token }) => {
     const [degree, setDegree] = useState('');
     const [positions, setPositions] = useState('');
     const [biography, setBiography] = useState('');
-    const [knowledgeRating, setKnowledgeRating] = useState(0);
-    const [teachingSkillRating, setTeachingSkillRating] = useState(0);
-    const [communicationRating, setCommunicationRating] = useState(0);
-    const [easinessRating, setEasinessRating] = useState(0);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(
-                'https://hellsinger1337-yarsu-wiki-0893.twc1.net/api/teachers',
+            const token = localStorage.getItem('token');
+                if (!token) {
+                    throw new Error('Token not found');
+                }
+
+            const userInfo = await getMe(token);
+            const response = await api.post(
+                'api/teacher_requests',
                 {
                     name,
                     photo,
@@ -25,10 +28,7 @@ const AddTeacher = ({ token }) => {
                     degree,
                     positions,
                     biography,
-                    knowledge_rating: knowledgeRating,
-                    teaching_skill_rating: teachingSkillRating,
-                    communication_rating: communicationRating,
-                    easiness_rating: easinessRating,
+                    user_id: userInfo.data.id
                 },
                 {
                     headers: {
@@ -79,7 +79,7 @@ const AddTeacher = ({ token }) => {
                 value={biography}
                 onChange={(e) => setBiography(e.target.value)}
             />
-            <button type="submit">Add Teacher</button>
+            <button type="submit">Предложить преподователя для рассмотрения администрации</button>
         </form>
     );
 };

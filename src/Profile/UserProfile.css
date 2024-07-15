@@ -49,6 +49,7 @@
     cursor: pointer; /* Курсор указателя */
     transition: background-color 0.3s ease, transform 0.3s ease; /* Плавный переход для фона и трансформации */
     margin-top: 20px; /* Отступ сверху */
+    margin-bottom: 10px;
   }
   
   .profile-button-green {
@@ -88,7 +89,9 @@
     outline: none; /* Убираем стандартную обводку */
     box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.5); /* Тень при фокусе для улучшения доступности */
   }  
-  
+  .edit-profile{
+    background-color: #444;
+  }
   .profile,.profile-info,.edit-profile,.edit-avatar {
     display: flex;
     flex-direction: column;
